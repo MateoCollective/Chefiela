@@ -1,0 +1,720 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+header {
+    background-color: #ffffff;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 999;
+}
+
+::selection {
+    background-color: transparent;
+    color: inherit;
+}
+
+::-moz-selection {
+    background-color: transparent;
+    color: inherit;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33.33%;
+    height: 100%;
+    cursor: pointer;
+    color: #9e9e9e;
+    text-decoration: none;
+}
+
+.tab.active {
+    color: #ff5722;
+}
+
+.tab i {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.tab-content {}
+
+
+
+
+
+.teks-singkat {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+    /* atur lebar maksimum sesuai kebutuhan */
+}
+
+
+
+
+.scroll-box {
+    overflow: hidden;
+}
+
+.scroll-content {
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Memberi warna pada scroll bar */
+.scroll-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-content::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.scroll-content::-webkit-scrollbar-thumb {
+    background-color: #fafafa;
+    border-radius: 5px;
+    border: 7px solid #fff;
+}
+
+
+#searchBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+#searchInput {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fafafa;
+    width: 200px;
+}
+
+#searchBtn {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+    margin: 5px;
+}
+
+
+.semua {
+    margin: 80px 0px;
+}
+
+.tag {
+    margin-top: 10px;
+    color: #191919;
+}
+
+.tag h2 {
+    font-size: 15px;
+    margin: 20px 0px 0px 15px;
+    line-height: 1px;
+}
+
+.tag p {
+    font-size: 11px;
+    margin-left: 15px;
+    opacity: 80%;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.ingredient-list {
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    height: 90px;
+    margin: 10px;
+}
+
+
+.ingredient {
+    display: inline-block;
+    margin: 15px;
+    cursor: pointer;
+    color: #191919;
+}
+
+.ingredient img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.ingredient h3 {
+    font-size: 11px;
+    margin: 5px 0;
+    text-align: center;
+}
+
+#random-meals {
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    flex-direction: row;
+    /* Tambahkan baris ini */
+    overflow-x: auto;
+    color: #191919;
+}
+
+#jepang-meals {
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    flex-direction: row;
+    /* Tambahkan baris ini */
+    overflow-x: auto;
+    color: #191919;
+}
+
+.meal-card {
+    position: relative;
+    /* tambahkan posisi relatif pada elemen .meal-card */
+    margin: 10px;
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    width: 200px;
+    height: 100px;
+}
+
+.meal-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 1;
+    height: 100px;
+}
+
+.meal-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    background-size: cover;
+}
+
+.meal-card h3 {
+    font-size: 14px;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.meal-card p {
+    font-size: 11px;
+    color: #ffffff;
+    background-color: #ff5622;
+    padding: 7px 8px;
+    border-radius: 10px;
+    display: inline-block;
+    top: -15px;
+    position: relative;
+}
+
+#meals {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+.meal-desk {
+    margin: 10px;
+    line-height: 3px;
+    text-align: left;
+    position: relative;
+    top: -60px;
+    z-index: 2;
+}
+
+.meal-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.meal-details img {
+    max-width: 100%;
+    max-height: 50%;
+    margin-bottom: 10px;
+}
+
+.meal-details h2 {
+    color: #191919;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 20px;
+    margin: 0px 15px;
+    padding-bottom: 10px;
+    line-height: 1;
+}
+
+.meal-details h3 {
+    color: #191919;
+    font-size: 14px;
+    margin: 10px 15px;
+}
+
+.meal-details p {
+    color: #191919;
+    font-size: 11px;
+    margin: 0px 15px;
+}
+
+.meal-details a {
+    color: #191919;
+    font-size: 11px;
+    margin: 0px 15px;
+    text-align: left;
+}
+
+.meal-details ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    color: #191919;
+    margin: 0px 15px;
+    font-size: 11px;
+}
+
+.meal-details li {
+    margin-bottom: 5px;
+    list-style: none;
+    margin: 3px 15px;
+    font-size: 11px;
+    border-bottom: 1px solid #fafafa;
+    padding-bottom: 10px;
+}
+
+.close-btn {}
+
+
+
+.search-meal-card {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.027);
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 100%;
+    margin: 15px;
+
+}
+
+.search-meal-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    line-height: -10;
+    margin: 10px;
+}
+
+.search-meal-info h3 {
+    font-size: 14px;
+    font-weight: bold;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    max-height: 200px;
+}
+
+.search-meal-info a {
+    font-size: 11px;
+
+    color: #888;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    max-height: 200px;
+}
+
+.search-meal-info p {
+    font-size: 11px;
+    color: #ffffff;
+    background: linear-gradient(270deg, rgba(255, 125, 85, 0) 0%, rgba(255, 107, 62, 1) 100%, rgba(255, 87, 34, 1) 100%);
+    display: block;
+    padding: 5px;
+}
+
+.search-meal-card img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    background-size: cover;
+}
+
+
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left a {
+    margin-right: 10px;
+    color: inherit;
+    font-size: 18px;
+}
+
+.right a {
+    color: inherit;
+    font-size: 20px;
+}
+
+.header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    z-index: 99999;
+    transition: background-color 0.3s ease-in-out;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.gradient-header {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.76) 100%);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.header-scroll {
+    background-color: #ffffff;
+    z-index: 999999;
+}
+
+.header-scroll .left a,
+.header-scroll .left span,
+.header-scroll .right a {
+    color: white;
+}
+
+.header-scroll .gradient-header {
+    opacity: 0;
+}
+
+
+
+
+
+.content {
+    margin: 50px auto;
+    max-width: 800px;
+    color: #191919;
+}
+
+.page-title {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.app-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.app-info i {
+    font-size: 60px;
+    color: #007bff;
+    margin-right: 20px;
+}
+
+.app-name {
+    font-size: 15px;
+    margin: 10px;
+}
+
+.app-version {
+    font-size: 16px;
+    margin: 0;
+    color: #6c757d;
+}
+
+.creator-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.creator-name {
+    font-size: 13px;
+    margin: 0;
+}
+
+.creator-email,
+.creator-website {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.creator-website a {
+    color: #ff5722;
+}
+
+.legal-info {
+    font-size: 14px;
+    margin-top: 50px;
+    color: #6c757d;
+    padding-top: 60px;
+}
+
+.legal-info a {
+    color: #ff5722;
+}
+
+
+.slider-container {
+    margin: 0px 10px;
+    margin-bottom: -60px;
+}
+
+.slider-image {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-position: center;
+    object-fit: cover;
+    border-radius: 10px;
+    background-size: cover;
+}
+
+.slider-overlay {
+    top: -60px;
+    position: relative;
+    padding: 5px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    border-radius: 10px;
+}
+
+.slider-title {
+    color: #ffffff;
+    font-size: 15px;
+    margin: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
+.slider-description {
+    color: #ffffff;
+    font-size: 14px;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+    margin: 5px;
+    /* atur lebar maksimum sesuai kebutuhan */
+}
+
+
+
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#splash-screen img {
+    max-width: 50%;
+}
+
+#splash-screen h1 {
+    font-size: 15px;
+    position: relative;
+    bottom: -250px;
+}
+
+.ucapan {
+    margin: 20px;
+    color: #191919;
+}
+
+
+
+
+
+/* Styling untuk tombol kategori */
+.categoryButtons {
+    margin: 5px;
+}
+
+button {
+    background-color: #fafafa;
+    color: #333;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ff5722;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+
+    .recipe {
+        display: inline-block;
+    }
+
+    .recipe img {
+        width: 100px;
+        height: 135px;
+        object-fit: cover;
+    }
+
+    .recipe h2 {
+        font-size: 12px;
+    }
+
+    .teks-singkat {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100px;
+        /* atur lebar maksimum sesuai kebutuhan */
+    }
+
+    .content {
+        margin: 30px auto;
+        padding: 0 15px;
+        max-width: 100%;
+    }
+
+    .app-info {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .app-info i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .app-name {
+        text-align: center;
+        margin: 0;
+    }
+
+    .creator-info {
+        margin-top: 30px;
+    }
+
+    .legal-info {
+        font-size: 14px;
+        margin-top: 30px;
+        text-align: center;
+    }
+}

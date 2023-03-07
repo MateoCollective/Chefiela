@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8"> <!-- Set karakter encoding -->
+    <title>Chefiela - Get cooking inspiration on every visit.</title> <!-- Judul halaman -->
+    <meta name="description" content="Having an easy-to-use food recipe search feature, so you can quickly find the recipe you want."> <!-- Deskripsi halaman untuk SEO -->
+    <meta name="keywords" content="resep masakan, alfin firmansyah, alfinsfh_"> <!-- Kata kunci halaman untuk SEO -->
+    <meta name="author" content="alfin septi firmansyah"> <!-- Nama pengarang halaman -->
+    <meta name="robots" content="resep masakan, resep makanan"> <!-- Pengaturan mesin pencari -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta viewport untuk tampilan di perangkat mobile -->
+    <link rel="icon" href="logo2.png" type="image/png"> <!-- Favicon atau ikon situs -->
+    <link rel="canonical" href="https://www.example.com/page.html"> <!-- Tautan URL utama dari halaman -->
+    <link rel="alternate" href="https://www.example.com/page.html" hreflang="en-us">
+    <!-- Tautan URL alternatif dalam bahasa tertentu -->
+    <link rel="stylesheet" href="style.css"> <!-- Tautan ke file CSS eksternal --> <!-- Tautan ke file JavaScript eksternal -->
+</head>
+
+<body>
+
+
+
+
+    <div id="splash-screen">
+        <img src="logo1.png" alt="Logo">
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo2.png" alt="Logo">
+        </div>
+    </header>
+
+    <div class="semua">
+
+
+
+
+
+
+        <div class="tab-container">
+            <div class="tab active" data-tab="recipes">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <div class="tab" data-tab="favorites">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="tab" data-tab="settings">
+                <i class="fas fa-cog"></i>
+
+            </div>
+        </div>
+
+        <div class="tab-content" id="recipes">
+            <!-- Konten resep makanan -->
+
+            <!-- Konten resep makanan favorit -->
+            <h3 class="ucapan" id="greeting"></h3>
+            <div class="slider-container">
+                <div class="slider-image"></div>
+                <div class="slider-overlay">
+                    <h2 class="slider-title"></h2>
+                    <p class="slider-description"></p>
+                </div>
+            </div>
+
+
+
+            <div class="container">
+
+                <div class="tag">
+                    <h2>Popular Ingredients</h2>
+                </div>
+
+                <div class="scroll-box">
+                    <div class="scroll-content">
+                        <!-- Isi scroll box -->
+                        <div class="popular-ingredients">
+                            <div class="ingredient-list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tag">
+                    <h2>Random Meals</h2>
+                    <p>Mungkin kamu menyukai ini</p>
+                </div>
+
+
+                <div class="scroll-box">
+                    <div class="scroll-content">
+                        <!-- Isi scroll box -->
+
+                        <div id="random-meals"></div>
+
+
+                    </div>
+                </div>
+
+                <div class="tag">
+                    <h2>Japanese Food</h2>
+                    <p>Mungkin kamu menyukai ini</p>
+                </div>
+
+                <div class="scroll-box">
+                    <div class="scroll-content">
+                        <!-- Isi scroll box -->
+
+
+                        <div id="jepang-meals"></div>
+
+                    </div>
+                </div>
+
+
+
+
+                <!-- Button untuk kategori vegetarian -->
+                <div class="scroll-box">
+                    <div class="scroll-content">
+                        <!-- Isi scroll box -->
+                        <div class="categoryButtons">
+                            <button onclick="getMealsByCategory('chicken')">Chicken</button>
+                            <button onclick="getMealsByCategory('vegetarian')">Vegetarian</button>
+                            <button onclick="getMealsByCategory('chicken')">Chicken</button>
+                            <button onclick="getMealsByCategory('vegetarian')">Vegetarian</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container untuk menampilkan resep-resep -->
+            <div class="scroll-box">
+                <div class="scroll-content">
+                    <!-- Isi scroll box -->
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="tab-content" id="favorites" style="display:none">
+
+
+
+            <div id="searchBox">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search meals...">
+                    <button id="searchBtn">Search</button>
+                </div>
+            </div>
+
+            <div id="meals"></div>
+
+
+
+
+        </div>
+
+        <div class="tab-content" id="settings" style="display:none">
+            <!-- Konten pengaturan aplikasi -->
+            <main class="content">
+                <h1 class="page-title">Informasi Aplikasi</h1>
+                <div class="app-info">
+                    <h2 class="app-name">Nama Aplikasi</h2>
+                    <p class="app-version">Versi 1.0.0</p>
+                </div>
+                <div class="creator-info">
+                    <h3 class="creator-title">Dibuat oleh:</h3>
+                    <p class="creator-name">Alfin Firmansyah</p>
+                    <p class="creator-email">Email: mateocompanyone@gmail.com</p>
+                    <p class="creator-website">Website: <a href="#">No data</a></p>
+                    <h3 class="creator-title">API:</h3>
+                    <p class="creator-name">TheMealDB</p>
+                </div>
+                <div class="legal-info">
+                    <p>&copy; 2023 Nama Aplikasi. Hak cipta dilindungi undang-undang.</p>
+                    <p><a href="#">Kebijakan Privasi</a> | <a href="#">Syarat dan Ketentuan</a></p>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
