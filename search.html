@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://themealdb.com/images/logo-small.png" alt="Logo">
+        </div>
+    </header>
+
+    <div class="semua">
+
+    <div style="text-align: center;">
+        <input type="text" id="search" placeholder="Search...">
+    </div>
+    <div class="popup">
+        <div class="popup-inner">
+            <span class="popup-close">&times;</span>
+            <div id="popup-content"></div>
+        </div>
+    </div>
+    <div id="recipes"></div>
+
+
+    <div class="tab-container">
+        <div class="tab" href="index.html">
+            <i class="fas fa-utensils"></i>
+        </div>
+        <a class="tab active" href="search.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+        <div class="tab" href="index.html">
+            <i class="fas fa-cog"></i>
+
+        </div>
+    </div>
+
+    <div class="tab-content" id="recipes">
+        <!-- Konten resep makanan -->
+        <div class="test"></div>
+        <div id="recipes"></div>
+
+
+
+    </div>
+</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Category Example</title>
+</head>
+<body>
+	<h1>Category Example</h1>
+
+	<!-- Button untuk kategori chicken -->
+	<button id="btn-chicken">Chicken</button>
+
+	<!-- Button untuk kategori vegetarian -->
+	<button id="btn-vegetarian">Vegetarian</button>
+
+	<!-- Container untuk menampilkan daftar resep -->
+	<div id="recipes-container"></div>
+
+	<script>
+		// API endpoint URL
+		const url = 'https://www.themealdb.com/api/json/v1/1/filter.php';
+
+		// Event listener untuk button chicken
+		document.getElementById('btn-chicken').addEventListener('click', function() {
+			// Parameter untuk kategori chicken
+			const param = {c: 'chicken'};
+
+			// Memanggil API untuk mendapatkan daftar resep
+			fetch(`${url}?${new URLSearchParams(param)}`)
+				.then(response => response.json())
+				.then(data => {
+					// Menampilkan daftar resep
+					showRecipes(data.meals);
+				})
+				.catch(error => {
+					console.error(error);
+				});
+		});
+
+		// Event listener untuk button vegetarian
+		document.getElementById('btn-vegetarian').addEventListener('click', function() {
+			// Parameter untuk kategori vegetarian
+			const param = {c: 'vegetarian'};
+
+			// Memanggil API untuk mendapatkan daftar resep
+			fetch(`${url}?${new URLSearchParams(param)}`)
+				.then(response => response.json())
+				.then(data => {
+					// Menampilkan daftar resep
+					showRecipes(data.meals);
+				})
+				.catch(error => {
+					console.error(error);
+				});
+		});
+
+		// Fungsi untuk menampilkan daftar resep
+		function showRecipes(recipes) {
+			// Mengosongkan container resep
+			document.getElementById('recipes-container').innerHTML = '';
+
+			// Membuat elemen list untuk setiap resep
+			const ul = document.createElement('ul');
+			for (const recipe of recipes) {
+				const li = document.createElement('li');
+				li.innerHTML = `<a href="https://www.themealdb.com/meal/${recipe.idMeal}" target="_blank">${recipe.strMeal}</a>`;
+				ul.appendChild(li);
+			}
+
+			// Menambahkan list resep ke dalam container
+			document.getElementById('recipes-container').appendChild(ul);
+		}
+	</script>
+</body>
+</html>
+
+</body>
+<script src="script.js"></script>
+<script>
+
+    </script>
+</html>
