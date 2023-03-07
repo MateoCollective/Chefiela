@@ -560,7 +560,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 145px;
     background-position: center;
     object-fit: cover;
     border-radius: 10px;
@@ -594,6 +594,7 @@ header {
     text-overflow: ellipsis;
     max-width: 250px;
     margin: 5px;
+    opacity: 80%;
     /* atur lebar maksimum sesuai kebutuhan */
 }
 
