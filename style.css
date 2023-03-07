@@ -28,12 +28,12 @@ header {
 ::selection {
     background-color: transparent;
     color: inherit;
-  }
-  
-  ::-moz-selection {
+}
+
+::-moz-selection {
     background-color: transparent;
     color: inherit;
-  }
+}
 
 .logo-container {
     display: flex;
@@ -127,31 +127,31 @@ header {
 
 
 #searchBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
 }
 
 #searchInput {
-  padding: 8px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: #fafafa;
-  width: 200px;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fafafa;
+    width: 200px;
 }
 
 #searchBtn {
-  background-color: #ff5722;
-  color: #fff;
-  padding: 8px 10px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease-in-out;
-  margin: 5px;
+    background-color: #ff5722;
+    color: #fff;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+    margin: 5px;
 }
 
 
@@ -166,13 +166,13 @@ header {
 
 .tag h2 {
     font-size: 15px;
-    margin: 20px 0px 0px 20px;
+    margin: 20px 0px 0px 15px;
     line-height: 1px;
 }
 
 .tag p {
     font-size: 11px;
-    margin-left: 20px;
+    margin-left: 15px;
     opacity: 80%;
 }
 
@@ -210,23 +210,36 @@ header {
     margin: 5px 0;
     text-align: center;
 }
+
 #random-meals {
-  display: flex;
-  justify-content: flex-start;
-  white-space: nowrap;
-  flex-direction: row; /* Tambahkan baris ini */
-  overflow-x: auto;
-  color: #191919;
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    flex-direction: row;
+    /* Tambahkan baris ini */
+    overflow-x: auto;
+    color: #191919;
+}
+
+#jepang-meals {
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    flex-direction: row;
+    /* Tambahkan baris ini */
+    overflow-x: auto;
+    color: #191919;
 }
 
 .meal-card {
-    position: relative; /* tambahkan posisi relatif pada elemen .meal-card */
+    position: relative;
+    /* tambahkan posisi relatif pada elemen .meal-card */
     margin: 10px;
     border: 1px solid #fafafa;
     border-radius: 5px;
     cursor: pointer;
     overflow: hidden;
-    width: 200px;  
+    width: 200px;
     height: 100px;
 }
 
@@ -240,19 +253,19 @@ header {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
     z-index: 1;
     height: 100px;
-  }
+}
 
 .meal-card img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  background-size: cover;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    background-size: cover;
 }
 
 .meal-card h3 {
-  font-size: 14px;
-  z-index: 2;
-  color: #ffffff;
+    font-size: 14px;
+    z-index: 2;
+    color: #ffffff;
 }
 
 .meal-card p {
@@ -267,9 +280,13 @@ header {
 }
 
 #meals {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+
+
+
 
 .meal-desk {
     margin: 10px;
@@ -280,45 +297,74 @@ header {
     z-index: 2;
 }
 
-  .meal-details {
+.meal-details {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 9999;
     background-color: #ffffff;
     overflow-x: hidden;
-  }
-  .meal-details img {
-    max-width:100%;
+}
+
+.meal-details img {
+    max-width: 100%;
     max-height: 50%;
     margin-bottom: 10px;
-  }
-  .meal-details h2, .meal-details h3, .meal-details p {
+}
+
+.meal-details h2 {
     color: #191919;
     margin-bottom: 10px;
-    text-align: center;
-    font-size: 15px;
-  }
-  .meal-details ul {
+    text-align: left;
+    font-size: 20px;
+    margin: 0px 15px;
+    padding-bottom: 10px;
+    line-height: 1;
+}
+
+.meal-details h3 {
+    color: #191919;
+    font-size: 14px;
+    margin: 10px 15px;
+}
+
+.meal-details p {
+    color: #191919;
+    font-size: 11px;
+    margin: 0px 15px;
+}
+
+.meal-details a {
+    color: #191919;
+    font-size: 11px;
+    margin: 0px 15px;
+    text-align: left;
+}
+
+.meal-details ul {
     list-style: none;
     padding: 0;
     margin-bottom: 10px;
-    text-align: left;
     color: #191919;
-  }
-  .meal-details li {
+    margin: 0px 15px;
+    font-size: 11px;
+}
+
+.meal-details li {
     margin-bottom: 5px;
     list-style: none;
-  }
-  .close-btn {
+    margin: 3px 15px;
+    font-size: 11px;
+    border-bottom: 1px solid #fafafa;
+    padding-bottom: 10px;
+}
 
-  }
+.close-btn {}
 
 
 
@@ -332,17 +378,17 @@ header {
     width: 100%;
     margin: 15px;
 
-  }
-  
-  .search-meal-info {
+}
+
+.search-meal-info {
     display: flex;
     flex-direction: column;
     flex: 1;
     line-height: -10;
     margin: 10px;
-  }
-  
-  .search-meal-info h3 {
+}
+
+.search-meal-info h3 {
     font-size: 14px;
     font-weight: bold;
 
@@ -352,9 +398,9 @@ header {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     max-height: 200px;
-  }
-  
-  .search-meal-info a {
+}
+
+.search-meal-info a {
     font-size: 11px;
 
     color: #888;
@@ -364,39 +410,41 @@ header {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     max-height: 200px;
-  }
-  .search-meal-info p {
+}
+
+.search-meal-info p {
     font-size: 11px;
     color: #ffffff;
-    background: linear-gradient(270deg, rgba(255,125,85,0) 0%, rgba(255,107,62,1) 100%, rgba(255,87,34,1) 100%);
+    background: linear-gradient(270deg, rgba(255, 125, 85, 0) 0%, rgba(255, 107, 62, 1) 100%, rgba(255, 87, 34, 1) 100%);
     display: block;
     padding: 5px;
-  }
-  
-  .search-meal-card img {
+}
+
+.search-meal-card img {
     width: 100px;
     height: 150px;
     object-fit: cover;
     background-size: cover;
-  }
-  
+}
+
 
 
 .left {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .left a {
-  margin-right: 10px;
-  color: inherit;
-  font-size: 18px;
+    margin-right: 10px;
+    color: inherit;
+    font-size: 18px;
 }
 
 .right a {
-  color: inherit;
-  font-size: 20px;
+    color: inherit;
+    font-size: 20px;
 }
+
 .header {
     color: white;
     display: flex;
@@ -406,30 +454,34 @@ header {
     padding: 0 20px;
     z-index: 99999;
     transition: background-color 0.3s ease-in-out;
-  }
-  
-  .gradient-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.gradient-header {
     background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.76) 100%);
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
-  }
-  
-  .header-scroll {
+}
+
+.header-scroll {
     background-color: #ffffff;
     z-index: 999999;
-  }
-  
-  .header-scroll .left a,
-  .header-scroll .left span,
-  .header-scroll .right a {
+}
+
+.header-scroll .left a,
+.header-scroll .left span,
+.header-scroll .right a {
     color: white;
-  }
-  
-  .header-scroll .gradient-header {
+}
+
+.header-scroll .gradient-header {
     opacity: 0;
-  }
-  
-  
+}
+
+
 
 
 
@@ -500,7 +552,7 @@ header {
 
 
 .slider-container {
-    margin: 0px 15px;
+    margin: 0px 10px;
     margin-bottom: -60px;
 }
 
@@ -554,7 +606,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ff5722;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -586,7 +638,7 @@ header {
     margin: 5px;
 }
 
- button {
+button {
     background-color: #fafafa;
     color: #333;
     padding: 5px 15px;
@@ -597,7 +649,7 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
- button:hover {
+button:hover {
     background-color: #ff5722;
     color: #fff;
 }
